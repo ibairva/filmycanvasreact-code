@@ -1,0 +1,90 @@
+.nav-bar {
+  position: sticky;
+  display: flex;
+  top: 0px;
+  padding: 0% 1%;
+  width: 100%;
+  height: 100px;
+  margin: 0px auto;
+  background-color: #c12911;
+  z-index: 10;
+}
+
+.nav-logo {
+  display: flex;
+  float: left;
+  width: 30%;
+  height: auto;
+}
+.my_logo {
+  font-family: "Architects Daughter", cursive;
+  color: white;
+  font-size: 60px;
+  margin: 7px 9px;
+  color: #effbfd;
+}
+.nav-links {
+  width: 46%;
+  float: right;
+  padding: 10px 15px;
+  margin: 16px 0px;
+  margin-left: auto;
+}
+.nav-links ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.nav-links ul li {
+  font-size: 25px;
+  list-style: none;
+  /* flex: 1; */
+  padding: 5px 15px;
+}
+.nav-links ul a {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+.nav-links ul li::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: white;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+.nav-links ul li:hover::after {
+  width: 100%;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .my_logo {
+    font-size: 42px;
+    margin: 21px 5px;
+  }
+  .nav-links {
+    width: 55%;
+    padding: 10px 5px;
+    display: inline-block;
+  }
+  .nav-links ul li {
+    font-size: 20px;
+    padding: 14px 4px;
+    margin: 0px 9%;
+  }
+}
+@media screen and (max-width: 524px) {
+  .nav-bar {
+    height: 77px;
+  }
+  .my_logo {
+    font-size: 24px;
+    margin: 21px 1px;
+  }
+  .nav-links ul li {
+    font-size: 13px;
+    padding: 5px 2px;
+    margin: 0px 5%;
+  }
+}

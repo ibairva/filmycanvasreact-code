@@ -1,0 +1,113 @@
+.title_room {
+  text-align: center;
+}
+.title_room h1 {
+  font-family: "Montserrat", sans-serif;
+  margin: 10px 40px;
+  font-size: 46px;
+  color: #000000fa;
+}
+.title_room h2 {
+  font-family: "Montserrat", sans-serif;
+  margin: 10px 40px;
+  font-size: 24px;
+  color: #000000fa;
+}
+
+.title_room h1 span {
+  color: #c12911;
+  text-shadow: 3px 2px 2px black;
+  font-size: 46px;
+}
+.title_room h2 span {
+  color: #182628;
+}
+.search-panel {
+  position: relative;
+  height: 170px;
+}
+.search-box {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #100c0d;
+  height: 60px;
+  border-radius: 40px;
+  padding: 10px;
+  transition: 0.5s;
+}
+.search-input {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0px;
+  color: white;
+  font-family: "Oxygen", sans-serif;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+}
+.search-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: black;
+  background: #c12911;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+.search-box:hover > .search-input {
+  width: 240px;
+  padding: 0 6px;
+}
+@media screen and (max-width: 768px) {
+  .title_room h1 {
+    font-size: 28px;
+  }
+  .title_room h1 span {
+    font-size: 36px;
+  }
+  .search-box {
+    height: 54px;
+    padding: 7px;
+  }
+  .search-box:hover > .search-input {
+    width: 196px;
+  }
+}
+@media screen and (max-width: 524px) {
+  .title_room h1 {
+    font-size: 24px;
+  }
+  .title_room h1 span {
+    font-size: 24px;
+    text-shadow: 2px 1px 2px black;
+  }
+  .title_room h2 {
+    margin: 20px 40px 3px;
+    font-size: 17px;
+  }
+  .search-box {
+    height: 36px;
+    padding: 3px;
+  }
+  .search-btn {
+    width: 30px;
+    height: 30px;
+  }
+  .search-panel {
+    height: 120px;
+  }
+  .search-box:hover > .search-input {
+    width: 120px;
+    font-size: 12px;
+    line-height: 32px;
+  }
+}
