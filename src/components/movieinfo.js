@@ -3,19 +3,6 @@ import "./movieinfo.css";
 import Modal from "react-modal";
 
 function Movieinfo({ movieData, modalIsOpen, setModalIsOpen, closePopup }) {
-  // const customStyles = {
-  //   content: {
-  //     top: "35%",
-  //     left: "50%",
-  //     right: "auto",
-  //     bottom: "auto",
-  //     marginRight: "-50%",
-  //     width: "60%",
-  //     transform: "translate(-40%, -10%)",
-  //     overflow: "auto",
-  //   },
-  // };
-
   return (
     <div className="clearfx" id="info_container">
       <Modal
