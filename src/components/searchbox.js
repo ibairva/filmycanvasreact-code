@@ -1,7 +1,7 @@
 import React from "react";
 import "./searchbox.css";
 
-function Searchbox({ handleInput, onKeySearch, search }) {
+function Searchbox({ handleInput, onKeySearch, validateInput, inputError }) {
   return (
     <div>
       <div className="title_room">
@@ -22,9 +22,12 @@ function Searchbox({ handleInput, onKeySearch, search }) {
             onChange={handleInput}
             onKeyPress={onKeySearch}
           />
-          <a className="search-btn" onClick={search} href="#">
+          <a className="search-btn" onClick={validateInput} href="#">
             <i className="fas fa-search"></i>
           </a>
+        </div>
+        <div className="blank-error">
+          <span>{inputError}</span>
         </div>
       </div>
     </div>
