@@ -2,7 +2,7 @@ import React from "react";
 import "./movieinfo.css";
 import Modal from "react-modal";
 
-function Movieinfo({ movieData, modalIsOpen, setModalIsOpen }) {
+function Movieinfo({ movieData, modalIsOpen, setModalIsOpen, closePopup }) {
   // const customStyles = {
   //   content: {
   //     top: "35%",
@@ -97,11 +97,7 @@ function Movieinfo({ movieData, modalIsOpen, setModalIsOpen }) {
             </p>
           </div>
           <footer className="info-footer">
-            <a
-              className="close-btn"
-              id="search"
-              onClick={() => setModalIsOpen(false)}
-            >
+            <a className="close-btn" id="search" onClick={closePopup}>
               <div>Close Window</div>
               {/* <i className="far fa-times-circle"></i> */}
             </a>
