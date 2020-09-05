@@ -14,12 +14,14 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [movieData, setMovieData] = useState({});
   const [errorMsg, setErrorMsg] = useState();
+  const [inputError, setInputError] = useState();
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const myApiUrl = "https://www.omdbapi.com/?apikey=39201518&";
 
   const handleInput = (e) => {
     let input = e.target.value;
+    // console.log(input);
     setUserInput(() => {
       return input;
     });
@@ -27,27 +29,36 @@ function App() {
 
   const onKeySearch = (e) => {
     if (e.key === "Enter") {
+      validateInput();
+    }
+  };
+  const validateInput = () => {
+    setErrorMsg();
+    setInputError();
+    if (userInput === undefined || userInput.length === 0) {
+      let msg = "Movie name cannot be blank";
+      setInputError(msg);
+      setUserInput();
+    } else {
       search();
     }
   };
-
   const search = () => {
-    if (userInput === undefined) {
-      alert("Movie name cannot be blank");
-    } else {
-      axios(myApiUrl + "s=" + userInput).then(({ data }) => {
-        console.log(userInput);
-        if (data.Error) {
-          setSearchResults([]);
-          let msg = "Movie not Found.Try Again";
-          setErrorMsg(msg);
-        } else {
-          setErrorMsg("");
-          let results = data.Search;
-          setSearchResults(results);
-        }
-      });
-    }
+    axios(myApiUrl + "s=" + userInput).then(({ data }) => {
+      // console.log(userInput);
+      console.log(data);
+      if (data.Error) {
+        let msg = "Movie not Found.Try Again";
+        setErrorMsg(msg);
+        setSearchResults([]);
+        setUserInput();
+      } else {
+        setErrorMsg("");
+        let results = data.Search;
+        setSearchResults(results);
+      }
+    });
+    // }
   };
 
   const openPopup = (id) => {
@@ -56,10 +67,14 @@ function App() {
       console.log(clickedMovieData);
       setMovieData(clickedMovieData);
     });
-    console.log(movieData);
+    // console.log(movieData);
     setModalIsOpen(true);
   };
 
+  const closePopup = () => {
+    setModalIsOpen(false);
+    setMovieData({});
+  };
   return (
     <div className="canvas">
       <div className="wrapper">
@@ -67,11 +82,13 @@ function App() {
         <Navbar />
         <Searchbox
           handleInput={handleInput}
-          search={search}
+          validateInput={validateInput}
+          inputError={inputError}
+          // search={search}
           onKeySearch={onKeySearch}
         />
-        {console.log(searchResults)}
-        {console.log(errorMsg)}
+        {/* {console.log(searchResults)}
+        {console.log(errorMsg)} */}
         <Searchresults
           searchResults={searchResults}
           openPopup={openPopup}
@@ -83,13 +100,14 @@ function App() {
             movieData={movieData}
             modalIsOpen={modalIsOpen}
             setModalIsOpen={setModalIsOpen}
+            closePopup={closePopup}
           />
         ) : (
           false
         )}
       </div>
       <footer className="main-footer">
-        <h3>All Rights Reserved @FilmyCanvas</h3>
+        <h3>Developed By: Indrajeet</h3>
       </footer>
     </div>
   );
