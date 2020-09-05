@@ -27,46 +27,48 @@
   height: 170px;
 }
 .search-box {
-  display: flex;
   position: absolute;
+  width: 360px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #100c0d;
+  background: #0a0a0a;
   height: 60px;
   border-radius: 40px;
-  padding: 10px;
-  transition: 0.5s;
+  padding: 7px;
 }
 .search-input {
   border: none;
   background: none;
   outline: none;
   float: left;
-  padding: 0px;
   color: white;
   font-family: "Oxygen", sans-serif;
   font-size: 16px;
-  transition: 0.4s;
-  line-height: 40px;
-  width: 0px;
+  line-height: 46px;
+  width: 290px;
+  padding: 0 10px;
 }
 .search-btn {
-  width: 40px;
-  height: 40px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   color: black;
-  background: #c12911;
+  background: #a0301e;
   float: right;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.4s;
 }
-.search-box:hover > .search-input {
-  width: 240px;
-  padding: 0 6px;
+.blank-error {
+  position: absolute;
+  top: 87%;
+  left: 50%;
+  transform: translate(-50%, -87%);
+  font-size: 14px;
+  color: #ea0101;
 }
+
 @media screen and (max-width: 768px) {
   .title_room h1 {
     font-size: 28px;
@@ -75,11 +77,17 @@
     font-size: 36px;
   }
   .search-box {
+    width: 310px;
     height: 54px;
-    padding: 7px;
+    padding: 5px;
   }
-  .search-box:hover > .search-input {
-    width: 196px;
+  .search-input {
+    width: 240px;
+    line-height: 42px;
+  }
+  .search-btn {
+    width: 45px;
+    height: 45px;
   }
 }
 @media screen and (max-width: 524px) {
@@ -95,19 +103,23 @@
     font-size: 17px;
   }
   .search-box {
-    height: 36px;
-    padding: 3px;
+    height: 48px;
+    padding: 4px;
+    width: 240px;
   }
   .search-btn {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
   .search-panel {
     height: 120px;
   }
-  .search-box:hover > .search-input {
-    width: 120px;
+  .search-input {
+    width: 184px;
     font-size: 12px;
-    line-height: 32px;
+    line-height: 40px;
+  }
+  .blank-error {
+    margin-top: 10px;
   }
 }
