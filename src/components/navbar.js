@@ -10,19 +10,6 @@ class Navbar extends Component {
             <h1 className="my_logo">FilmyCanvas</h1>
           </a>
         </div>
-        <div className="nav-links">
-          <ul>
-            <a href="index.html">
-              <li>Demo1</li>
-            </a>
-            <a href="index.html">
-              <li>Demo2</li>
-            </a>
-            <a href="index.html">
-              <li>Demo3</li>
-            </a>
-          </ul>
-        </div>
       </div>
     );
   }
